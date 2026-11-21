@@ -1,0 +1,148 @@
+/* Chronicle Noir — public policy site */
+:root {
+  --bg: #0b0a09;
+  --bg-elev: #141311;
+  --ink: #ece6d8;
+  --muted: #b7b09f;
+  --gold: #c9a227;
+  --gold-soft: #e8d48b;
+  --line: rgba(201, 162, 39, 0.28);
+  --max: 42rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 500px at 50% -80px, rgba(201, 162, 39, 0.08), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+a { color: var(--gold-soft); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: #fff6d4; }
+
+.wrap { width: min(100% - 2.5rem, 70rem); margin: 0 auto; }
+
+header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 10, 9, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 4.25rem;
+}
+.brand {
+  font-family: Cinzel, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.brand:hover { color: var(--gold-soft); }
+nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+nav a {
+  font-family: Cinzel, "Times New Roman", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+}
+nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
+
+main { flex: 1; padding: 3.25rem 0 4rem; }
+.hero, article { width: min(100%, var(--max)); }
+.kicker {
+  font-family: Cinzel, "Times New Roman", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+h1, h2, h3 {
+  font-family: Cinzel, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  color: var(--gold-soft);
+}
+h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0 0 1rem; }
+h2 { font-size: 1.25rem; margin: 2.25rem 0 0.7rem; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+.lede { font-size: 1.15rem; color: var(--ink); margin: 0 0 1.5rem; }
+.rule {
+  width: 4.5rem;
+  height: 1px;
+  background: var(--gold);
+  border: 0;
+  margin: 0 0 1.75rem;
+}
+p { margin: 0 0 1rem; color: var(--ink); }
+.muted { color: var(--muted); }
+ul, ol { margin: 0 0 1.15rem; padding-left: 1.25rem; }
+li { margin: 0 0 0.4rem; }
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  padding: 1.15rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.panel p:last-child { margin-bottom: 0; }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.btn {
+  display: inline-block;
+  font-family: Cinzel, "Times New Roman", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bg);
+  background: var(--gold);
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--gold);
+}
+.btn:hover { background: var(--gold-soft); color: var(--bg); }
+.btn.ghost {
+  background: transparent;
+  color: var(--gold-soft);
+}
+.btn.ghost:hover { background: rgba(201, 162, 39, 0.12); color: #fff6d4; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.75rem 0 2.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 1.5rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--gold-soft); }
+
+@media (max-width: 640px) {
+  header .wrap { flex-direction: column; align-items: flex-start; padding: 0.9rem 0; gap: 0.65rem; }
+}
